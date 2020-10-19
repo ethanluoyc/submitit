@@ -1,0 +1,10 @@
+#$ -l tmem=2G
+#$ -l h_vmem=2G
+#$ -l h_rt=1:0:0
+#$ -S /bin/bash
+#$ -N MyTESTJOBNAME
+#$ -t 1-1000
+hostname
+date
+~/programs/process_data.sh "~/data/mydata${SGE_TASK_ID}"
+date

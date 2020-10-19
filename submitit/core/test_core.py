@@ -51,6 +51,8 @@ class MockedSubprocess:
             return self._sbatch
         elif command[0] == "scancel":
             return ""
+        elif command[0] == "qsub":
+            return "Your job {} (\"MyTESTJOBNAME\") has been submitted".format(self.job_id)
         else:
             raise ValueError(f'Unknown command to mock "{command}".')
 
